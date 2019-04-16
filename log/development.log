@@ -47,3 +47,10 @@ Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.0ms)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-04-16 17:56:17 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 503ms (Views: 497.8ms | ActiveRecord: 0.0ms)
+
+
