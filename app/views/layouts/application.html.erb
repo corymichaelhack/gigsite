@@ -10,10 +10,19 @@
   </head>
 
   <body>
+    <div id="flex-content-container">
+
+    <%= render "shared/application_nav" %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "shared/application_nav" %> 
     <%= yield %>
+
+    <h1>Adding content</h1>
+   
+  
+    </div>
+    <%= render "shared/application_footer" %> 
   </body>
 </html>
