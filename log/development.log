@@ -734,3 +734,600 @@ Processing by Admin::GigsController#show as HTML
 Completed 200 OK in 51ms (Views: 47.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 16:43:39 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/controllers/admin/gigs_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/admin/gigs_controller.rb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 16:43:52 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (6.0ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 286ms (Views: 257.6ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 16:44:01 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YW2qkaaVf8ReYeGYSZLwep9chkMxT67Zl3L2A4KYyoF20dkMq41idWYb0J1Of6jQN+bpjN6VbWHVDkLzcsoOdw==", "gig"=>{"title"=>"", "description"=>"asdfasd"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:8
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.4ms)
+  Rendered shared/_application_footer.html.erb (0.1ms)
+Completed 422 Unprocessable Entity in 75ms (Views: 65.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/gigs" for ::1 at 2019-04-17 17:14:48 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/admin/gigs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:15:29 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 12.2ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/views/admin/gigs/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+...fer.append=( f.button :submit 'Create Gig', class: 'btn btn-...
+...                              ^
+/Users/coryhack/Desktop/gigsite/app/views/admin/gigs/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+... f.button :submit 'Create Gig', class: 'btn btn-primary' );@...
+...                              ^):
+  
+app/views/admin/gigs/new.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/admin/gigs/new.html.erb:7: syntax error, unexpected ',', expecting ')'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:15:50 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (172.4ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `gigs_path' for #<#<Class:0x00007fb0d329d9a8>:0x00007fb0d22039d0>):
+    1: <br />
+    2: 
+    3: <%= simple_form_for @gig do |f| %>
+    4:     <%= f.input :title, label: 'Gig Title', error: 'Gig title is mandatory, please specify one'%>
+    5:     <%= f.input :description, label: 'Gig description'%>
+    6: 
+  
+app/views/admin/gigs/new.html.erb:3:in `_app_views_admin_gigs_new_html_erb___4293884829632428211_70198719595520'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:17:22 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (122.6ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 9.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `gigs_path' for #<#<Class:0x00007fb0d36ea448>:0x00007fb0d36e8a30>):
+    1: <br />
+    2: 
+    3: <%= simple_form_for @gig do |f| %>
+    4:     <%= f.input :title, label: 'Gig Title', error: 'Gig title is mandatory, please specify one'%>
+    5:     <%= f.input :description, label: 'Gig description'%>
+    6: 
+  
+app/views/admin/gigs/new.html.erb:3:in `_app_views_admin_gigs_new_html_erb___4293884829632428211_70198719108660'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:17:32 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (195.9ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 11.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `gigs_path' for #<#<Class:0x00007f8089454ca8>:0x00007f808b368298>):
+    1: <br />
+    2: 
+    3: <%= simple_form_for @gig do |f| %>
+    4:     <%= f.input :title, label: 'Gig Title', error: 'Gig title is mandatory, please specify one'%>
+    5:     <%= f.input :description, label: 'Gig description'%>
+    6: 
+  
+app/views/admin/gigs/new.html.erb:3:in `_app_views_admin_gigs_new_html_erb___1629949151812793866_70095017784120'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:19:52 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (14.3ms)
+  Rendered shared/_application_nav.html.erb (0.4ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 301ms (Views: 297.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:40:47 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (4.8ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:42:11 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.7ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 47.7ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 17:42:16 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f1hFQobjCKt0vQtaTVYcqL5gxPRv24ZEgviw+hgBvcpo5Dbfi/sVGkzHOl9Ku0QCFtqrO4ABRfzAhAQK6FN5PA==", "gig"=>{"title"=>"", "description"=>"asdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.9ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 422 Unprocessable Entity in 61ms (Views: 51.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/gigs" for ::1 at 2019-04-17 17:44:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/gigs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:44:31 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (4.8ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 2416ms (Views: 2411.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 17:44:36 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4i6kb5yoX6lLM7/pciNwezZeYgxLlDtqTVw4X88+v371ktfykbBCGHNJjux1zijRnuQNw6RO+NIPIIyvP2x7iA==", "gig"=>{"title"=>"", "description"=>"asdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (4.6ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 422 Unprocessable Entity in 78ms (Views: 71.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 17:57:23 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (7.6ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 17:57:27 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sHVfGFyjutZCUxTScPRuvotMTLYXYEuAuvbfkPuqJwenySyFUbunZ3opJdd3GTYUI/Yjefi6iDj4imtgC/jj8Q==", "gig"=>{"title"=>"", "description"=>"asdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (7.3ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 422 Unprocessable Entity in 84ms (Views: 78.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/gigs" for ::1 at 2019-04-17 18:05:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/gigs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:05:41 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (5.9ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:05:45 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yWDlQjZLNUKlOyNgm9rG4LyCt5Rrf2JxZEjS16F/qIne3JbfO1Mo851BEmWcN55KFDjYW4SlockmNGYnUS1sfw==", "gig"=>{"title"=>"", "description"=>"asdfasdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.6ms)
+  Rendered shared/_application_nav.html.erb (0.4ms)
+  Rendered shared/_application_footer.html.erb (0.5ms)
+Completed 422 Unprocessable Entity in 59ms (Views: 54.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:06:24 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yWDlQjZLNUKlOyNgm9rG4LyCt5Rrf2JxZEjS16F/qIne3JbfO1Mo851BEmWcN55KFDjYW4SlockmNGYnUS1sfw==", "gig"=>{"title"=>"", "description"=>"asdfasdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (4.9ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 422 Unprocessable Entity in 1721ms (Views: 1716.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:06:38 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VaE8v+WhooR2cMQm9lMh0847LonZ/NJCSqw/ky2bpOJCHU8i6Lm/NU4K9SPxvnl5ZoFBRjYmEfoI0Itj3clgFA==", "gig"=>{"title"=>"", "description"=>"asdfasdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (33.0ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 422 Unprocessable Entity in 401ms (Views: 344.1ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:06:40 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Afc1CL/uqJdUoVQJJionQ/H0MOm4neJNgD5quuc9/6sWS0aVsva1JmzbZQwhx3/pWU5fJldHIfXCQt5KF287XQ==", "gig"=>{"title"=>"", "description"=>"asdfasdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.7ms)
+  Rendered shared/_application_nav.html.erb (0.2ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 422 Unprocessable Entity in 76ms (Views: 71.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:12:30 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (6.0ms)
+  Rendered shared/_application_nav.html.erb (0.4ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:13:49 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (7.8ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 81.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:14:09 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UzrGjt1x3jGxM9VI2GtXx1ccCZD8tgG+zvVJborPlRxEhrUT0GnDgIlJ5E3fhg9t/6ZmXxNswgaMif2eep1R6g==", "gig"=>{"title"=>"", "description"=>"asdfasdf"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.9ms)
+  Rendered shared/_application_nav.html.erb (0.2ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 422 Unprocessable Entity in 56ms (Views: 52.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:14:45 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (4.7ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:14:48 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (3.7ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 55.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:15:38 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (5.0ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:16:37 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TQHeohRhpGK332ySp5xJXGHLMsdjBVbzB48MrWrNlFJava0/GXm504+lXZegcRH2yXFdCIzflUtF87hdmp9QpA==", "gig"=>{"title"=>"Gig 2", "description"=>"blah blah"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[36mGig Create (7.0ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Gig 2"], ["description", "blah blah"], ["user_id", 1], ["created_at", "2019-04-17 22:16:37.945429"], ["updated_at", "2019-04-17 22:16:37.945429"]]
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+Redirected to http://localhost:3000/admin/gigs/4
+Completed 302 Found in 19ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/admin/gigs/4" for ::1 at 2019-04-17 18:16:37 -0400
+Processing by Admin::GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/gigs_controller.rb:21
+  Rendering admin/gigs/show.html.erb within layouts/application
+  Rendered admin/gigs/show.html.erb within layouts/application (0.5ms)
+  Rendered shared/_application_nav.html.erb (0.2ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 54.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/gigs" for ::1 at 2019-04-17 18:21:24 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/admin/gigs"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/gigs/index" for ::1 at 2019-04-17 18:21:30 -0400
+Processing by Admin::GigsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/admin/gigs_controller.rb:21
+Completed 404 Not Found in 38ms (ActiveRecord: 11.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Gig with 'id'=index):
+  
+app/controllers/admin/gigs_controller.rb:21:in `show'
+Started GET "/gigs" for ::1 at 2019-04-17 18:21:40 -0400
+Processing by GigsController#index as HTML
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/views/gigs/index.html.erb:3
+  Rendered gigs/index.html.erb within layouts/application (5.2ms)
+  Rendered shared/_application_nav.html.erb (0.4ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 2296ms (Views: 2293.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "gigs"[0m
+Started GET "/admin/gigs/new" for ::1 at 2019-04-17 18:22:26 -0400
+Processing by Admin::GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering admin/gigs/new.html.erb within layouts/application
+  Rendered admin/gigs/new.html.erb within layouts/application (24.0ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/admin/gigs" for ::1 at 2019-04-17 18:22:34 -0400
+Processing by Admin::GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"72hVXaxBrrhTlHayQMhmKbDTPGltSlTm8L3o7VToWen41CbAoVmzCWvuR7dHJT6DGGlTpoKQl16ywVwdpLqdHw==", "gig"=>{"title"=>"Gig 3", "description"=>"hahahahhaah"}, "commit"=>"Create Gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[36mGig Create (0.6ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Gig 3"], ["description", "hahahahhaah"], ["user_id", 1], ["created_at", "2019-04-17 22:22:34.682643"], ["updated_at", "2019-04-17 22:22:34.682643"]]
+  ↳ app/controllers/admin/gigs_controller.rb:10
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/admin/gigs_controller.rb:10
+Redirected to http://localhost:3000/admin/gigs/5
+Completed 302 Found in 16ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/admin/gigs/5" for ::1 at 2019-04-17 18:22:34 -0400
+Processing by Admin::GigsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/gigs_controller.rb:21
+  Rendering admin/gigs/show.html.erb within layouts/application
+  Rendered admin/gigs/show.html.erb within layouts/application (0.4ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gigs" for ::1 at 2019-04-17 18:22:42 -0400
+Processing by GigsController#index as HTML
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/views/gigs/index.html.erb:3
+  Rendered gigs/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.3ms)
+
+
