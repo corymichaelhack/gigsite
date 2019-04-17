@@ -119,3 +119,45 @@ Processing by StaticPagesController#index as HTML
 Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-04-16 20:23:33 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 20:23:47 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 20:23:51 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 20:31:21 -0400
+  
+ActionController::RoutingError (Couldn't find StaticPagesHelper, expected it to be defined in helpers/static_pages_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/static_pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-04-16 20:32:04 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 113ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-16 20:34:47 -0400
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.2ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
