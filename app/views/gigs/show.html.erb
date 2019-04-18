@@ -1,0 +1,9 @@
+<h1><%= @gig.title %></h1>
+
+<h1><%= @gig.description %></h1>
+
+<div>
+  <% if current_user && current_user == @gig.user %>
+    <%= link_to 'Admin', admin_gig_path(@gig), class: 'btn btn-danger btn-large' %>
+  <% end %>
+</div>

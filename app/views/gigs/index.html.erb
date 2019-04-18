@@ -2,12 +2,12 @@
 
 <div>
  <% @gigs.each do |gig| %>
-    <h2 class="text-center"><%= gig.title %></h2>
+    <h2 class="text-center"><%= link_to gig.title, gig_path(gig) %></h2>
      <div class="col-sm-8 col-12">
       <%= gig.description %>
     </div>
     <div class="col-sm-4 col-12 text-center">
-      <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+      <%= link_to 'More Details...', gig_path(gig), class: 'btn btn-primary btn-large' %>
     </div>
   <% end %>
 </div>
