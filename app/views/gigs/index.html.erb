@@ -1,5 +1,6 @@
 <h1>Lets see the Gigs!</h1>
 
+<div>
  <% @gigs.each do |gig| %>
     <h2 class="text-center"><%= gig.title %></h2>
      <div class="col-sm-8 col-12">
@@ -9,3 +10,4 @@
       <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
     </div>
   <% end %>
+</div>
