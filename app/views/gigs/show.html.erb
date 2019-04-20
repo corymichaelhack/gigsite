@@ -7,3 +7,13 @@
     <%= link_to 'Admin', admin_gig_path(@gig), class: 'btn btn-danger btn-large' %>
   <% end %>
 </div>
+
+<div class="text-center">
+  <ul>
+    <% @gig.sites.each do |site | %>
+    <li>
+      <%= site.name %>
+    </li>
+    <% end %> 
+  </ul>
+</div>

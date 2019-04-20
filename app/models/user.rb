@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :gigs
+  has_many :notes
 
 
   # Include default devise modules. Others available are:
