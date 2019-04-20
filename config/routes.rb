@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   resources :gigs, only: [:index, :show]
   namespace :admin do
-    resources :gigs, only: [:new, :create, :show]
+    resources :gigs, only: [:new, :create, :show] do
+      resources :sites, only: [:new, :create]
+    end
   end
 end

@@ -1,0 +1,10 @@
+<h1>Add a new section</h1>
+
+<%= simple_form_for @site, url: admin_gig_sites_path(@gig) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :street %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.input :zipcode %>
+  <%= f.submit "Add a Site" %>
+<% end %>
