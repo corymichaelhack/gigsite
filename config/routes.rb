@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   resources :notes
 
   namespace :admin do
+    resources :sites, only: [] do
+      resources :notes, only: [:new, :create]
+    end
     resources :gigs, only: [:new, :create, :show] do
       resources :sites, only: [:new, :create]
     end
+    
   end
 end

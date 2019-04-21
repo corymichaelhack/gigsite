@@ -1,0 +1,7 @@
+ <h1>Add a new note</h1>
+  <div>
+    <%= simple_form_for @note, url: admin_site_notes_path(@site) do |f| %>
+      <%= f.input :body %>
+      <%= f.submit "Add the note" %>
+    <% end %>
+  </div>
