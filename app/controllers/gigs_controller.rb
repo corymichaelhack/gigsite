@@ -1,7 +1,7 @@
 class GigsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @gigs = Gig.all
+    @gigs = current_user.gigs.all
   end
 
   def show
