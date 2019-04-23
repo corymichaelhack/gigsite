@@ -1,0 +1,8 @@
+<h1>Add a new Note</h1>
+  <%= simple_form_for @note, url: site_notes_path(@site) do |f| %>
+    <%= f.input :body %>
+    <br />
+    <%= f.submit "Add the note", class: 'btn btn-primary' %>
+    <br />
+    <br />
+  <% end %>
