@@ -8,12 +8,10 @@
   <% end %>
 </div>
 
-<div class="text-center">
-  <ul>
-    <% @gig.sites.each do |site | %>
-    <li>
-      <%= site.name %>
-    </li>
-    <% end %> 
-  </ul>
-</div>
+<ul>
+  <% @gig.sites.each do |site| %>
+  <li>
+    <%= link_to site.name, gig_site_path( @gig, site ) %>
+  </li>
+  <% end %> 
+</ul>
