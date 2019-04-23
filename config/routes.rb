@@ -21,11 +21,11 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :sites, only: [] do
+    resources :sites, only: [:index, :show] do
       resources :notes, only: [:new, :create]
     end
     resources :gigs, only: [:new, :create, :show] do
-      resources :sites, only: [:new, :create]
+      resources :sites, only: [:index, :show, :new, :create]
     end
     
   end

@@ -1,5 +1,6 @@
 class GigsController < ApplicationController
   before_action :authenticate_user!
+  
   def index
     @gigs = current_user.gigs.all
   end
