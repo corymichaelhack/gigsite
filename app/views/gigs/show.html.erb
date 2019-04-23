@@ -2,11 +2,9 @@
 
 <h1><%= @gig.description %></h1>
 
-<div>
-  <% if current_user && current_user == @gig.user %>
-    <%= link_to 'Admin', admin_gig_path(@gig), class: 'btn btn-danger btn-large' %>
-  <% end %>
-</div>
+<div class="text-center">
+  <%= link_to 'Add a new Site...', new_gig_site_path(@gig), class: 'btn btn-primary btn-lg' %>
+  </div>
 
 <ul>
   <% @gig.sites.each do |site| %>
