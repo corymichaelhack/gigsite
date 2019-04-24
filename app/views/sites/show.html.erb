@@ -10,3 +10,9 @@
     </li>
   <% end %>
 </ul>
+
+<% @site.notes.each do |note| %>
+<div>
+  <%= image_tag note.image_url %>
+</div>
+ <% end %>
