@@ -13,6 +13,9 @@
 
 <% @site.notes.each do |note| %>
 <div>
-  <%= image_tag note.image_url %>
+  <%= image_tag note.image.standard.url %>
+</div>
+<div>
+  <%= image_tag note.image.thumb.url %>
 </div>
  <% end %>
