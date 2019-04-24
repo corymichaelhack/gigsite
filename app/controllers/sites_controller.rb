@@ -3,7 +3,6 @@ class SitesController < ApplicationController
   
   def new
     @gig = Gig.find(params[:gig_id])
-    
     @site = Site.new  
   end
 
