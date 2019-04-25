@@ -5,7 +5,7 @@
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -40,13 +40,6 @@
     %w(jpg jpeg gif png)
   end
 
-   version :standard do 
-        process resize_to_fill: [200,200, :north]
-    end
-    
-    version :thumb do
-        process resize_to_fit: [50,50]
-    end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename

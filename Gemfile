@@ -68,6 +68,4 @@ gem 'devise'
 gem 'simple_form', '~> 4.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
-gem 'cloudinary', '~> 1.11', '>= 1.11.1'
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
-
