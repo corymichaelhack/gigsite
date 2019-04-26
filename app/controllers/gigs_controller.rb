@@ -9,7 +9,19 @@ class GigsController < ApplicationController
     @gig = Gig.find(params[:id])
   end
 
+  def new
+    @gig = Gig.new
+  end
+
+  def create
+    @gig = Gig.create(gig_params)
+  end
+
   private
 
-  
+  def gig_params
+    params.require(:gig).permit(:title, :description)
+    
+  end
+
 end

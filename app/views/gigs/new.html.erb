@@ -1,0 +1,10 @@
+<h1>Create a new Gig</h1>
+
+<%= simple_form_for @gig, url: gigs_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <br />
+    <%= f.submit "Add the gig", class: 'btn btn-primary' %>
+    <br />
+    <br />
+  <% end %>
