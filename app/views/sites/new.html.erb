@@ -1,0 +1,12 @@
+<h1>Add a new Site</h1>
+  <%= simple_form_for @site, url: gig_sites_path(@gig) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :street %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zipcode %>
+    <br />
+    <%= f.submit "Add the site", class: 'btn btn-primary' %>
+    <br />
+    <br />
+  <% end %>
