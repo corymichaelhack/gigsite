@@ -14,7 +14,8 @@ class GigsController < ApplicationController
   end
 
   def create
-    @gig = Gig.create(gig_params)
+    @gig = current_user.gigs.create(gig_params)
+    redirect_to gigs_path(@gig)
   end
 
   private
