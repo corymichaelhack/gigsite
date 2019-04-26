@@ -11305,3 +11305,1133 @@ Processing by SitesController#show as HTML
 Completed 200 OK in 64ms (Views: 59.6ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/gigs" for ::1 at 2019-04-25 16:18:37 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (11.2ms)
+Started GET "/gigs" for ::1 at 2019-04-25 16:18:41 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (3.1ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 1613ms (Views: 1605.9ms | ActiveRecord: 1.4ms)
+
+
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 5533ms (Views: 5485.8ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/gigs/1" for ::1 at 2019-04-25 16:18:45 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (19.2ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 76ms (Views: 63.8ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:18:47 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (39.4ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image_url %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364731997600'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364731997600'
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:19:29 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364743100880'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364743100880'
+Started GET "/gigs/1" for ::1 at 2019-04-25 16:19:47 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:19:49 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image_url %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364731477820'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364731477820'
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:24:08 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image.url %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364733612360'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364733612360'
+Started GET "/gigs" for ::1 at 2019-04-25 16:24:34 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 59.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gigs/1" for ::1 at 2019-04-25 16:24:38 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:24:46 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image.url %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364743468680'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364743468680'
+Started GET "/gigs/1/sites/new" for ::1 at 2019-04-25 16:24:49 -0400
+Processing by SitesController#new as HTML
+  Parameters: {"gig_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:5
+Completed 406 Not Acceptable in 191ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::UnknownFormat (SitesController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gigs" for ::1 at 2019-04-25 16:25:26 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-04-25 16:25:28 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for GigsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gigs" for ::1 at 2019-04-25 16:25:31 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs/1" for ::1 at 2019-04-25 16:25:34 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs/1/sites/new" for ::1 at 2019-04-25 16:25:36 -0400
+Processing by SitesController#new as HTML
+  Parameters: {"gig_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:5
+Completed 406 Not Acceptable in 195ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::UnknownFormat (SitesController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/gigs/1" for ::1 at 2019-04-25 16:25:38 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.1ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.6ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (3.3ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 16:26:22 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Must supply cloud_name in tag or in configuration):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image.url %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb___3392603338845099836_70364743305360'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb___3392603338845099836_70364743305360'
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-25 16:26:34 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (1.9ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 67.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 16:26:42 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHAFcazCUHC2RFewDsJ8n3KZpljwqCrTapgXLlSFLiUGphUJm+2307Ja3VKGUgIGXbwuNtsIIhRJqkDlfEe7nA==", "note"=>{"body"=>"asdfasdf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffe21d9b738 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-8791-1ee09um.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (1.0ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfasdf"], ["site_id", 1], ["created_at", "2019-04-25 20:26:42.226599"], ["updated_at", "2019-04-25 20:26:42.226599"], ["image", "mefqcm81ggf1eeciluua.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.6ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 16:38:18 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHAFcazCUHC2RFewDsJ8n3KZpljwqCrTapgXLlSFLiUGphUJm+2307Ja3VKGUgIGXbwuNtsIIhRJqkDlfEe7nA==", "note"=>{"body"=>"asdfasdf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd12e99cd8 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-9849-adiclm.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfasdf"], ["site_id", 1], ["created_at", "2019-04-25 20:38:18.946388"], ["updated_at", "2019-04-25 20:38:18.946388"], ["image", "yy2vfebbgrurp1xlqd6z.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 12.6ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:13:52 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eHAFcazCUHC2RFewDsJ8n3KZpljwqCrTapgXLlSFLiUGphUJm+2307Ja3VKGUgIGXbwuNtsIIhRJqkDlfEe7nA==", "note"=>{"body"=>"asdfasdf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd1a802c00 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-9849-1f2lvn1.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.6ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfasdf"], ["site_id", 1], ["created_at", "2019-04-25 23:13:52.957168"], ["updated_at", "2019-04-25 23:13:52.957168"], ["image", "kgiozqohjv7rrhqfnnkv.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.0ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-25 19:14:06 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (14.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (20.4ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 365ms (Views: 318.3ms | ActiveRecord: 20.7ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:14:15 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w5EtvU39mHvJP1kw5XiLGkvwdquh6FDyHLjwgxTJLoK9Rz3FetJ/2M0h09Jt6PWDZNX+xYpIWDU/iqdIPAu7Ow==", "note"=>{"body"=>"hhhh", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc7b27749e0 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-10970-1lmaotl.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (1.1ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "hhhh"], ["site_id", 1], ["created_at", "2019-04-25 23:14:15.057519"], ["updated_at", "2019-04-25 23:14:15.057519"], ["image", "gxj224qk5whx0k6wydes.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.9ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:16:32 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w5EtvU39mHvJP1kw5XiLGkvwdquh6FDyHLjwgxTJLoK9Rz3FetJ/2M0h09Jt6PWDZNX+xYpIWDU/iqdIPAu7Ow==", "note"=>{"body"=>"hhhh", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc7b30b6968 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-10970-1hprj2k.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.3ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "hhhh"], ["site_id", 1], ["created_at", "2019-04-25 23:16:32.312286"], ["updated_at", "2019-04-25 23:16:32.312286"], ["image", "mjgvzmuetdfg8hfswdm1.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.9ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-25 19:16:37 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (2.0ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 56.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:16:45 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDTI3JedXew7zR+ZlYC7+QycgRe4g1RWG6lOrLML7LFu4tikoLK6Tz/TlXsdEMVgI7kJeZMjXJE4mxlnm8l5CA==", "note"=>{"body"=>"sadf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc7b7f57e78 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-10970-1libqav.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "sadf"], ["site_id", 1], ["created_at", "2019-04-25 23:16:45.119381"], ["updated_at", "2019-04-25 23:16:45.119381"], ["image", "oo7yx7p6otovxhzs14gs.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:17:23 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDTI3JedXew7zR+ZlYC7+QycgRe4g1RWG6lOrLML7LFu4tikoLK6Tz/TlXsdEMVgI7kJeZMjXJE4mxlnm8l5CA==", "note"=>{"body"=>"sadf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc7b68aa590 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-10970-cv9r8l.jpg>, @original_filename="background.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"background.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "sadf"], ["site_id", 1], ["created_at", "2019-04-25 23:17:23.774864"], ["updated_at", "2019-04-25 23:17:23.774864"], ["image", "rvi0hwrvblmemffs7wap.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:9
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:9:in `create'
+Started POST "/sites/1/notes" for ::1 at 2019-04-25 19:28:40 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDTI3JedXew7zR+ZlYC7+QycgRe4g1RWG6lOrLML7LFu4tikoLK6Tz/TlXsdEMVgI7kJeZMjXJE4mxlnm8l5CA==", "note"=>{"body"=>"sadf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8f4e09ab48 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190425-12400-1jzy8fx.jpg>, @original_filename="background.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"background.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.9ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "sadf"], ["site_id", 1], ["created_at", "2019-04-25 23:28:40.537026"], ["updated_at", "2019-04-25 23:28:40.537026"], ["image", "fok9wtpm2xdmhayoflxq.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+Started GET "/" for ::1 at 2019-04-25 19:29:27 -0400
+Processing by StaticPagesController#index as HTML
+  [1m[36mNote Update All (9.9ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556234991/fok9wtpm2xdmhayoflxq.jpg' WHERE "notes"."id" = $1[0m  [["id", 32]]
+Started GET "/gigs" for ::1 at 2019-04-25 19:29:52 -0400
+  ↳ app/controllers/notes_controller.rb:9
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered static_pages/index.html.erb within layouts/application (0.9ms)
+  [1m[35m (66.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+Processing by GigsController#index as HTML
+  [1m[36mGig Load (0.8ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 64067ms (ActiveRecord: 94.6ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (27.0ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 282ms (Views: 260.7ms | ActiveRecord: 18.7ms)
+
+
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (3.4ms)
+  Rendered shared/_application_nav.html.erb (0.3ms)
+  Rendered shared/_application_footer.html.erb (0.0ms)
+Completed 200 OK in 101ms (Views: 72.4ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/gigs/1" for ::1 at 2019-04-25 19:30:02 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 1]]
+  ↳ app/views/gigs/show.html.erb:10
+  Rendered gigs/show.html.erb within layouts/application (19.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 339ms (Views: 294.3ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-25 19:30:05 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (21.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 65.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-26 10:55:00 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (1.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (44.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (16.4ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 257ms (Views: 125.0ms | ActiveRecord: 41.5ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-26 10:55:09 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eUFg7HbW8A9wfCelP/fMNsAlw83JpR9Df832H05HBqbzIzVVLl452/qJCuXcxbQ4gP/ttaR4yTGCxtNHMEhkWw==", "note"=>{"body"=>"asdfasdf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc9d15b000 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190426-12457-px3uqf.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (5.9ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfasdf"], ["site_id", 1], ["created_at", "2019-04-26 14:55:09.380660"], ["updated_at", "2019-04-26 14:55:09.380660"], ["image", "rbtmuiqira234lajeabz.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Update All (0.8ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556290509/rbtmuiqira234lajeabz.jpg' WHERE "notes"."id" = $1[0m  [["id", 33]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 958ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 10:55:10 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `thumbnail' for "https://res-4.cloudinary.com/gigsite/image/upload/profile.jpg":String):
+    13: 
+    14: <% @site.notes.each do |note| %>
+    15: <div>
+    16:   <%= image_tag note.image_url.thumbnail %>
+    17: </div>
+    18:  <% end %>
+  
+app/views/sites/show.html.erb:16:in `block in _app_views_sites_show_html_erb__1617800349188602696_70258372981020'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb__1617800349188602696_70258372981020'
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 10:55:28 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (4.5ms)
+  Rendered shared/_application_nav.html.erb (0.8ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 58.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-26 11:06:07 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WI0CPZoX6cbQPGyXpnzcGKk00dyRrP/QJG5/J/0jcMkmWxJFrTgOZdQi5nUu7KKBhhFZsroM9xcHXCjs1eHlcA==", "note"=>{"body"=>"new ", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc9ac85028 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190426-12457-n7tdcs.jpg>, @original_filename="IMG_3358.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"IMG_3358.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.8ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "new "], ["site_id", 1], ["created_at", "2019-04-26 15:06:07.263410"], ["updated_at", "2019-04-26 15:06:07.263410"], ["image", "ucfxltqcdincdgxn1thd.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Update All (0.7ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556291176/ucfxltqcdincdgxn1thd.jpg' WHERE "notes"."id" = $1[0m  [["id", 34]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 10142ms (ActiveRecord: 23.1ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 11:06:17 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (5.6ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 65.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 11:07:21 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (7.4ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 70.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-26 18:11:46 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 10.5ms)
+
+
+  
+NoMethodError (undefined method `ccloudinary_transformation' for ImageUploader::Uploader70258371662580:Class
+Did you mean?  cloudinary_transformation):
+  
+app/uploaders/image_uploader.rb:16:in `block in <class:ImageUploader>'
+app/uploaders/image_uploader.rb:13:in `<class:ImageUploader>'
+app/uploaders/image_uploader.rb:1:in `<main>'
+app/models/note.rb:4:in `<class:Note>'
+app/models/note.rb:1:in `<main>'
+app/controllers/notes_controller.rb:4:in `new'
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-26 18:11:58 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (15.7ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 107ms (Views: 70.0ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-26 18:12:07 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uOk+Xv3umT10w7c+Jkl4GjO4kNVel2IoacR4TdGzQmTGPy4mysF+nnDdPdyu2QaDHJ0Yu3U3au9K9i+G+XHX3Q==", "note"=>{"body"=>"yeah yeah", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc95d8dc68 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190426-12457-vt7v60.jpg>, @original_filename="trucks.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"trucks.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.7ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "yeah yeah"], ["site_id", 1], ["created_at", "2019-04-26 22:12:07.762476"], ["updated_at", "2019-04-26 22:12:07.762476"], ["image", "zsfsynhnehnlm2j5ktr5.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Update All (0.6ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556316755/zsfsynhnehnlm2j5ktr5.jpg' WHERE "notes"."id" = $1[0m  [["id", 35]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 5898ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:12:13 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `standard' for #<ImageUploader:0x00007fcc9ae06528>):
+    16:   <%= image_tag note.image.thumbnail.url %>
+    17: </div>
+    18: <div>
+    19:   <%= image_tag note.image.standard.url %>
+    20: </div>
+    21:  <% end %>
+  
+app/views/sites/show.html.erb:19:in `block in _app_views_sites_show_html_erb__1617800349188602696_70258374369820'
+app/views/sites/show.html.erb:14:in `_app_views_sites_show_html_erb__1617800349188602696_70258374369820'
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:12:30 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (8.6ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:16:22 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.5ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (20.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 104ms (Views: 70.5ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:18:28 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (7.3ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 72ms (Views: 67.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sites/1/notes/new" for ::1 at 2019-04-26 18:18:33 -0400
+Processing by NotesController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:3
+  Rendering notes/new.html.erb within layouts/application
+  Rendered notes/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_application_nav.html.erb:15
+  Rendered shared/_application_nav.html.erb (2.2ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-26 18:18:40 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDEw646dSiRBjqvxL/FmmQNbQwrPUbx6Nhozk0rk64kiU2VS1hWD8Mt7hrHMwx6XQ4FtcqKMagjLERbLNOuJdA==", "note"=>{"body"=>"asdfsadsf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc9ad04af8 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190426-12457-l2xuno.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfsadsf"], ["site_id", 1], ["created_at", "2019-04-26 22:18:40.937851"], ["updated_at", "2019-04-26 22:18:40.937851"], ["image", "wxvmji02pvklxqt06r1t.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Update All (0.4ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556317121/wxvmji02pvklxqt06r1t.jpg' WHERE "notes"."id" = $1[0m  [["id", 36]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 1053ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:18:41 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.1ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (10.1ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 73ms (Views: 69.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:21:47 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (21.9ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 102ms (Views: 67.6ms | ActiveRecord: 14.9ms)
+
+
+Started POST "/sites/1/notes" for ::1 at 2019-04-26 18:21:56 -0400
+Processing by NotesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cA8G+zioM99HDFZaeMCr0pXCD8sTNkAIuzySlgcuYNMO2RaDD4fUfEMS3LjwUNVLuueHpTiWSM+YDsVdL+z1ag==", "note"=>{"body"=>"asdfsadsf", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcc968933b0 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190426-12457-16g74ix.jpg>, @original_filename="profile.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"profile.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Add the note", "site_id"=>"1"}
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Create (0.4ms)[0m  [1m[32mINSERT INTO "notes" ("body", "site_id", "created_at", "updated_at", "image") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "asdfsadsf"], ["site_id", 1], ["created_at", "2019-04-26 22:21:56.107192"], ["updated_at", "2019-04-26 22:21:56.107192"], ["image", "ae7piivflnct9me5jqik.jpg"]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mNote Update All (0.4ms)[0m  [1m[33mUPDATE "notes" SET "image" = 'image/upload/v1556317316/ae7piivflnct9me5jqik.jpg' WHERE "notes"."id" = $1[0m  [["id", 37]]
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:9
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:10
+Redirected to http://localhost:3000/gigs/1/sites/1
+Completed 302 Found in 1262ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/gigs/1/sites/1" for ::1 at 2019-04-26 18:21:57 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 1]]
+  ↳ app/views/sites/show.html.erb:7
+  Rendered sites/show.html.erb within layouts/application (9.9ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 75.2ms | ActiveRecord: 0.7ms)
+
+

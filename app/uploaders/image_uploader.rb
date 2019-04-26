@@ -4,6 +4,19 @@
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  version :main do 
+      eager
+      process resize_to_fit: [600,400]
+      cloudinary_transformation :quality => '80'
+  end
+
+  version :thumbnail do
+    eager
+    resize_to_fit(100, 100)
+    cloudinary_transformation :quality => '80'          
+  end  
+
+
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
