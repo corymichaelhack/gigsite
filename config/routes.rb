@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :sites, only: [:index, :show] do
     resources :notes, only: [:new, :create, :index]
   end
-  resources :gigs, only: [:new, :create, :index, :show] do
+  resources :gigs do
     resources :sites, only: [:index, :show, :new, :create]
   end
     

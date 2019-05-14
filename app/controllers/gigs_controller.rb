@@ -18,6 +18,12 @@ class GigsController < ApplicationController
     redirect_to gigs_path(@gig)
   end
 
+  def destroy
+    @gig = Gig.find(params[:id])
+    @gig.destroy
+    redirect_to gigs_path(@gig)
+  end
+
   private
 
   def gig_params
