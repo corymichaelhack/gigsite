@@ -3,14 +3,18 @@
 <div class="card w-50 mx-auto">
   <div class="card-body mx-auto">
     <%= simple_form_for @gig, url: gigs_path do |f| %>
+
     <div class="form-group">
       <%= f.label :title, "Title", class: 'control-label', placeholder: "Gig name" %>
       <%= f.text_field :title, class: 'form-control' %>
+      <p class='error'><%= show_errors(@gig, :title) %></p>
+
     </div>
     
     <div class="form-group">
       <%= f.label :description, "Description", class: 'control-label', placeholder: "Gig description" %>
       <%= f.text_field :description, class: 'form-control' %>
+      
     </div>
 
     <br />

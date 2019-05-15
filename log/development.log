@@ -14551,3 +14551,858 @@ Processing by GigsController#new as HTML
 Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/gigs" for ::1 at 2019-05-13 23:41:09 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XuBNY0UArjXy6cQNWUjhNOrUaTLWNhyo1lwDT+vUCy/laghYvP8legebbZBXBT1p5aXQGHl0pGVZcSBbOi0nEg==", "gig"=>{"title"=>"New Gig", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[36mGig Create (8.5ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "New Gig"], ["description", ""], ["user_id", 1], ["created_at", "2019-05-14 03:41:09.400031"], ["updated_at", "2019-05-14 03:41:09.400031"]]
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:17
+Redirected to http://localhost:3000/gigs.9
+Completed 302 Found in 17ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/gigs.9" for ::1 at 2019-05-13 23:41:09 -0400
+Processing by GigsController#index as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.1ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 168ms (Views: 146.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-13 23:41:14 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 70.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-13 23:41:16 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Efl0i2oJIUenUSOat+4hbaE/cn9A4BwAbVX04YzbAMzprA6+c9YgLJJY4tJbW136eR6zWjEnt4NvgYRhKwX00w==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+Redirected to http://localhost:3000/gigs
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-13 23:41:16 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 58.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/gigs" for ::1 at 2019-05-13 23:48:03 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (9.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 85ms (Views: 56.7ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-13 23:48:06 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (3.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 64.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-13 23:48:07 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bZmJdeox+8rVzgoazj9e1iWxiMIJhM2Zh2jOXZa+GM2VzPNA8+76oeDHy1IiiiJB/ZBJ53hDZhqFvL7dMWDs0g==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 54.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:03:05 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 57.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:03:07 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (286.6ms)
+Completed 500 Internal Server Error in 296ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gig' for #<#<Class:0x00007fc3c908de20>:0x00007fc3c0aa50d8>
+Did you mean?  @gig):
+    4:   <div class="card-body mx-auto">
+    5:     <%= simple_form_for @gig, url: gigs_path do |f| %>
+    6:       
+    7:     <% if gig.errors.any? %>
+    8:       <% gig.errors.full_messages.each do |message| %>
+    9:        <%= message %>
+   10:       <% end %>
+  
+app/views/gigs/new.html.erb:7:in `block in _app_views_gigs_new_html_erb__2136473115410144314_70239363869980'
+app/views/gigs/new.html.erb:5:in `_app_views_gigs_new_html_erb__2136473115410144314_70239363869980'
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:03:19 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 75ms (Views: 70.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:03:22 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PwL6vl/KrlvLD4xg/zZ5G2u376yFnz0E/umukTX7M9CEiL+FpjUlFD59Jf3xe6VGZMZWhirdhclxxI2F5AIf7Q==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (250.0ms)
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gig' for #<#<Class:0x00007fc3c908de20>:0x00007fc3c89dd1c0>
+Did you mean?  @gig):
+     5:     <%= simple_form_for @gig, url: gigs_path do |f| %>
+     6:       
+     7:     <% if @gig.errors.any? %>
+     8:       <% gig.errors.full_messages.each do |message| %>
+     9:        <%= message %>
+    10:       <% end %>
+    11:   <% end %>  
+  
+app/views/gigs/new.html.erb:8:in `block in _app_views_gigs_new_html_erb__2136473115410144314_70239357476080'
+app/views/gigs/new.html.erb:5:in `_app_views_gigs_new_html_erb__2136473115410144314_70239357476080'
+app/controllers/gigs_controller.rb:23:in `block (2 levels) in create'
+app/controllers/gigs_controller.rb:19:in `create'
+Started POST "/gigs" for ::1 at 2019-05-14 00:03:37 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PwL6vl/KrlvLD4xg/zZ5G2u376yFnz0E/umukTX7M9CEiL+FpjUlFD59Jf3xe6VGZMZWhirdhclxxI2F5AIf7Q==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:09:30 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.3ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:09:31 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (128.6ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `error_message_for' for #<SimpleForm::FormBuilder:0x00007fc3c1baa338>):
+    15:     <div class="form-group">
+    16:       <%= f.label :title, "Title", class: 'control-label', placeholder: "Gig name" %>
+    17:       <%= f.text_field :title, class: 'form-control' %>
+    18:       <%= f.error_message_for(:title) %>
+    19:     </div>
+    20:     
+    21:     <div class="form-group">
+  
+app/views/gigs/new.html.erb:18:in `block in _app_views_gigs_new_html_erb__2136473115410144314_70239372907440'
+app/views/gigs/new.html.erb:5:in `_app_views_gigs_new_html_erb__2136473115410144314_70239372907440'
+Started GET "/gigs" for ::1 at 2019-05-14 00:22:16 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.0ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:22:18 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (136.4ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `error_message_for' for #<SimpleForm::FormBuilder:0x00007fc3bfc2faf8>):
+    15:     <div class="form-group">
+    16:       <%= f.label :title, "Title", class: 'control-label', placeholder: "Gig name" %>
+    17:       <%= f.text_field :title, class: 'form-control' %>
+    18:       <%= f.error_message_for(:title) %>
+    19:     </div>
+    20:     
+    21:     <div class="form-group">
+  
+app/views/gigs/new.html.erb:18:in `block in _app_views_gigs_new_html_erb__2136473115410144314_70239356396500'
+app/views/gigs/new.html.erb:5:in `_app_views_gigs_new_html_erb__2136473115410144314_70239356396500'
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:22:25 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 88ms (Views: 84.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:22:26 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3H+awMiYeSnHwC1D0RXdRXLMGizICFFnTvQgTk2kYSZn9d/7MWfyZjKyhN7fWAEYfb2jBmdK6arB2QNanF1NGw==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 87ms (Views: 78.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:22:54 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 9.7ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/models/gig.rb:4: syntax error, unexpected ',', expecting =>
+            :title, presence: true
+                  ^):
+  
+app/models/gig.rb:4: syntax error, unexpected ',', expecting =>
+app/controllers/gigs_controller.rb:5:in `index'
+Started GET "/gigs" for ::1 at 2019-05-14 00:23:10 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.1ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/models/gig.rb:4: syntax error, unexpected ',', expecting =>
+            :description, presence: true
+                        ^):
+  
+app/models/gig.rb:4: syntax error, unexpected ',', expecting =>
+app/controllers/gigs_controller.rb:5:in `index'
+Started GET "/gigs" for ::1 at 2019-05-14 00:23:21 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 6.0ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/models/gig.rb:4: syntax error, unexpected ',', expecting keyword_end
+            :description, presence: true
+                        ^):
+  
+app/models/gig.rb:4: syntax error, unexpected ',', expecting keyword_end
+app/controllers/gigs_controller.rb:5:in `index'
+Started GET "/gigs" for ::1 at 2019-05-14 00:24:27 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (9.8ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 88ms (Views: 62.7ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:24:29 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (2.0ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 64ms (Views: 60.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:24:30 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rKTGb6pF9hVKgpvGmEqFPARPRJ9Zynxk+pR93JQ5TnFU8bxas5r3fn+LWo50//mr3G6FuigN1+f4QA1cM+e6bg==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 58.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:24:52 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:24:53 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.1ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:24:54 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tOw/MbpXNLJR4Pcs61XUi+Ioga0et6xv7TmMYK39ASZMuUUEo4g12WTpNmQH4KgcOglAiG9wB+zv7fzgCiP1OQ==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:36:42 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.4ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:36:43 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:36:44 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kYvHFXi3aThGT/ElKiDG+ytgzs2H7/IQNWy3iUyoJExp3r0gYWhoU3NGMG3Glbps80EP6PYoWZM3uMcJ63bQUw==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 62ms (Views: 54.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:38:24 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 9.5ms)
+
+
+  
+ArgumentError (Unknown validator: 'MessageValidator'):
+  
+app/models/gig.rb:3:in `<class:Gig>'
+app/models/gig.rb:1:in `<main>'
+app/controllers/gigs_controller.rb:5:in `index'
+Started GET "/gigs" for ::1 at 2019-05-14 00:38:52 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 5.3ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/models/gig.rb:3: syntax error, unexpected tSTRING_BEG, expecting =>
+...tle, presence: true, :message "Title is needed"
+...                              ^):
+  
+app/models/gig.rb:3: syntax error, unexpected tSTRING_BEG, expecting =>
+app/controllers/gigs_controller.rb:5:in `index'
+Started GET "/gigs" for ::1 at 2019-05-14 00:41:32 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (8.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 95ms (Views: 70.8ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:41:34 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 56.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:41:35 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3tk6Ap/F8Y4k8kAWwoBdy62VKxUw3Gta3oGvc1JPXHEmjEA3hhrw5RH7gV4uNSFcdbTqMEEbwNncVd/z9ZGobg==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 54.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:41:53 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:41:54 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:41:58 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B3KJzJaRJdWLJrcHI6AL3c2jf6+P9519Q6cOiuiI/m7/J/P5j04kvr4vdk/PFXdKFYK+iv4wNv5Bc34KT1YKcQ==", "gig"=>{"description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.3ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 00:43:28 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:43:29 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 54.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 00:43:36 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.1ms)
+  Rendered shared/_application_nav.html.erb (0.9ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 00:43:37 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7RWuTqVTzcDnEl+5dQ3akiGuEbmiojQZo6oNybgqWwZWn+t1XKxGjxJg9iR7QAbPLt+okw3gjNQshy7dadN3Ow==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 60.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 15:39:07 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (18.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (10.8ms)
+  Rendered shared/_application_nav.html.erb (1.2ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 197ms (Views: 138.8ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 15:39:09 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (4.6ms)
+  Rendered shared/_application_nav.html.erb (1.0ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 78ms (Views: 73.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 15:39:11 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bz1uDmtbjXytq1ud8R6BNVdOFXOoolDyVcwJhPvtxBH/aBQ7coSMF5iimtUdq/2ij2/UVtll+3FXGHkEXDMwDg==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.5ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 67.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 15:40:25 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (1.6ms)
+  Rendered shared/_application_nav.html.erb (0.9ms)
+  Rendered shared/_application_footer.html.erb (0.4ms)
+Completed 200 OK in 87ms (Views: 82.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 15:40:26 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (2.1ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 80ms (Views: 74.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 15:40:27 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hbUAYbCiPRRKD736KkVlewaxEZplfU4ARvQMjqiodlx94HpUqX08f38GfLLG8Bns3pDQvxS65YNEIHwOD3aCQw==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 62ms (Views: 55.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 15:50:23 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (2.1ms)
+  Rendered shared/_application_nav.html.erb (0.5ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 15:50:24 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/coryhack/Desktop/gigsite/app/views/gigs/new.html.erb:18: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...@gig.errors[:title].join(",") );@output_buffer.safe_append='
+...                              ^
+/Users/coryhack/Desktop/gigsite/app/views/gigs/new.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+            ^~~
+/Users/coryhack/Desktop/gigsite/app/views/gigs/new.html.erb:38: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/coryhack/Desktop/gigsite/app/views/gigs/new.html.erb:40: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/gigs/new.html.erb:18: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/gigs/new.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/gigs/new.html.erb:38: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/gigs/new.html.erb:40: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/gigs/new" for ::1 at 2019-05-14 15:55:55 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 54ms (Views: 50.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 15:55:56 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+LVYQIODDEmNIzk8YQbj8Q2zW/U2wz7g4UMSRcpAPXkaJBa+/GHftNGJXn/ycfSy0d0RXuZtDYMqC9dxtAsyA==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.2ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 57.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gigs" for ::1 at 2019-05-14 21:14:54 -0400
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:4
+  Rendered gigs/index.html.erb within layouts/application (8.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 126ms (Views: 57.6ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/gigs/new" for ::1 at 2019-05-14 21:14:56 -0400
+Processing by GigsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 68ms (Views: 63.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/gigs" for ::1 at 2019-05-14 21:14:57 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TsLJgEgZQjKNSoA90YhAUWzSWAYSUGnTxJjXY+VpYEC2l7O1UcZDWbhDQXU9PTzGtPOZI2OXwlDGTKfjQreUXw==", "gig"=>{"title"=>"", "description"=>""}, "commit"=>"Add the gig"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/gigs_controller.rb:20
+  Rendering gigs/new.html.erb within layouts/application
+  Rendered gigs/new.html.erb within layouts/application (1.8ms)
+  Rendered shared/_application_nav.html.erb (0.9ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 57.1ms | ActiveRecord: 0.9ms)
+
+

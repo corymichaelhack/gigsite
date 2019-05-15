@@ -15,7 +15,16 @@ class GigsController < ApplicationController
 
   def create
     @gig = current_user.gigs.create(gig_params)
-    redirect_to gigs_path(@gig)
+
+    respond_to do |format|
+      if @gig.save
+        format.html { redirect_to @gig, notice: 'Gig was successfully created.' }
+      else
+        format.html { render :new }
+      end
+    end
+
+    # redirect_to gigs_path(@gig)
   end
 
   def destroy
