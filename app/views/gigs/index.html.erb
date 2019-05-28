@@ -1,16 +1,30 @@
-<h1>Lets see My Gigs!</h1>
+<h1 class="text-center">Lets see My Gigs!</h1>
+<br>
 
-<div>
- <% @gigs.each do |gig| %>
-    <h2 class="text-center"><%= link_to gig.title, gig_path(gig) %></h2>
-     <div class="col-sm-8 col-12">
-      <%= gig.description %>
-    </div>
-    <div class="col-sm-4 col-12 text-center">
-      <%= link_to 'More Details...', gig_path(gig), class: 'btn btn-primary btn-large' %>
-    </div>
-  <% end %>
-</div>
+  <div class="row">
+   <% @gigs.each do |gig| %>
+   
+      <div class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="text-center"><%= link_to gig.title, gig_path(gig) %></h2>
+           <div>
+            <%= gig.description %>
+           </div>
+           <br>
+           <div class="col-sm-4 col-12 text-center">
+            <%= link_to 'More Details...', gig_path(gig), class: 'btn btn-primary btn-large' %>
+           </div>
+          </div>
+        </div>
+      </div>
+    
+    <% end %>
+
+  </div>
+
+  <br>
+
 
 <div class="col-sm-4 col-12 text-center">
   <%= link_to 'Add a Gig', new_gig_path, class: 'btn btn-primary btn-large' %>
