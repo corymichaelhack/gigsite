@@ -6,11 +6,11 @@ class GigsController < ApplicationController
   end
 
   def show
-    @gig = Gig.find(params[:id])
+    @gig = current_user.gigs.find(params[:id])
   end
 
   def new
-    @gig = Gig.new
+    @gig = current_user.gigs.new
   end
 
   def create
@@ -28,7 +28,7 @@ class GigsController < ApplicationController
   end
 
   def destroy
-    @gig = Gig.find(params[:id])
+    @gig = current_user.gigs.find(params[:id])
     @gig.destroy
     redirect_to gigs_path(@gig)
   end
