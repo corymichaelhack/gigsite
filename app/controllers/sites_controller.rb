@@ -2,12 +2,12 @@ class SitesController < ApplicationController
   before_action :authenticate_user!
   
   def new
-    @gig = Gig.find(params[:gig_id])
+    @gig = current_user.gigs.find(params[:gig_id])
     @site = Site.new  
   end
 
   def create
-    @gig = Gig.find(params[:gig_id])
+    @gig = current_user.gigs.find(params[:gig_id])
     @site = @gig.sites.create(site_params)
     redirect_to gig_path(@gig)
   end
@@ -17,7 +17,8 @@ class SitesController < ApplicationController
   end
 
   def show
-    @site = Site.find(params[:id])
+    @gig = current_user.gigs.find(params[:gig_id])
+    @site = @gig.sites.find(params[:id])
   end
 
   private 

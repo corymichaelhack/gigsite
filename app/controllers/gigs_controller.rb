@@ -2,11 +2,11 @@ class GigsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @gigs = current_user.gigs.all
+      @gigs = current_user.gigs.all
   end
 
   def show
-    @gig = current_user.gigs.find(params[:id])
+      @gig = current_user.gigs.find(params[:id])
   end
 
   def new
@@ -37,7 +37,6 @@ class GigsController < ApplicationController
 
   def gig_params
     params.require(:gig).permit(:title, :description)
-    
   end
 
 end
