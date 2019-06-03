@@ -8,12 +8,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    # @site = Site.find(params[:site_id])
-    # @note = @site.notes.create(note_params)
-
     @site = current_site.notes.create(note_params)
-
-
     redirect_to gig_site_path(current_site.gig, current_site)
   end
 
