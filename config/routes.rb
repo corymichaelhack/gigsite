@@ -4,12 +4,14 @@ Rails.application.routes.draw do
 
   root to: 'static_pages#index'
   
+  resources :gigs do
+    resources :sites, only: [:index, :show, :new, :create, :destroy]
+  end
+
   resources :sites, only: [:index, :show] do
     resources :notes, only: [:new, :create, :index]
   end
-  resources :gigs do
-    resources :sites, only: [:index, :show, :new, :create]
-  end
+  
     
   
 end

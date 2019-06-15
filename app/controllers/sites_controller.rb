@@ -21,6 +21,13 @@ class SitesController < ApplicationController
     @site = @gig.sites.find(params[:id])
   end
 
+  def destroy
+    @gig = current_user.gigs.find(params[:gig_id])
+    @site = @gig.sites.find(params[:id]) 
+    @site.destroy
+    redirect_to root_path
+  end
+
   private 
 
   def site_params

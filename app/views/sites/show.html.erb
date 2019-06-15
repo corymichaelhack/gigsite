@@ -1,9 +1,8 @@
-<div>
-  <h1><%= @site.name %> </h1>
+<h1><%= @site.name %></h1>
 
-  <%= link_to 'Add a new Note...', new_site_note_path(@site), class: 'btn btn-primary btn-lg' %>
+<div class="text-center">
+<%= link_to 'Delete Site', gig_site_path(@gig, @site), method: :delete, data: {confirm: "Are you sure you want to delete #{@site.name}"  }, class: 'btn btn-warning btn-lg' %>
 </div>
-
 
 <div class="row">
   <% @site.notes.each do |note| %>
@@ -36,3 +35,7 @@
   <% end %>
   <% end %>
 </div> 
+
+<div class="text-center">
+  <%= link_to 'Add a new Note...', new_site_note_path(@site), class: 'btn btn-primary btn-lg' %>
+</div>
