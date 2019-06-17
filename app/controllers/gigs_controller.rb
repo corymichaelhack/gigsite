@@ -28,9 +28,12 @@ class GigsController < ApplicationController
   end
 
   def destroy
+
     @gig = current_user.gigs.find(params[:id])
+    @sites = Site.where(:gig_id => params[:id]).destroy_all
     @gig.destroy
     redirect_to gigs_path(@gig)
+ 
   end
 
   private
