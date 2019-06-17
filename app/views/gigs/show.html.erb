@@ -2,6 +2,11 @@
 
 <h1><%= @gig.description %></h1>
 
+
+<div class="text-center">
+<%= link_to 'Update Gig', edit_gig_path(@gig), class: 'btn btn-warning btn-lg' %>
+</div>
+
 <div class="text-center">
 <%= link_to 'Delete Gig', gig_path(@gig), method: :delete, data: {confirm: "Are you sure you want to delete #{@gig.title}"  }, class: 'btn btn-warning btn-lg' %>
 </div>

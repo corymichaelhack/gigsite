@@ -23,17 +23,29 @@ class GigsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
 
-    # redirect_to gigs_path(@gig)
+  def edit  
+    @gig = current_user.gigs.find(params[:id])
+  end
+
+  def update
+    @gig = current_user.gigs.find(params[:id])
+    
+    respond_to do |format|
+      if @gig.update(gig_params)
+        format.html { redirect_to @gig, notice: 'Gig was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def destroy
-
     @gig = current_user.gigs.find(params[:id])
     @sites = Site.where(:gig_id => params[:id]).destroy_all
     @gig.destroy
     redirect_to gigs_path(@gig)
- 
   end
 
   private
