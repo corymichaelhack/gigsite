@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!
-  before_action :require_authorized_for_current_site, only: [:create, :new]
+  # before_action :require_authorized_for_current_site, only: [:create, :new]
 
   def index
     
@@ -9,6 +9,11 @@ class NotesController < ApplicationController
   def new
     @site = Site.find(params[:site_id])
     @note = Note.new
+  end
+
+  def show
+    @site = Site.find(params[:site_id])
+    @note = @site.notes.find(params[:id])
   end
 
   def create
@@ -23,10 +28,27 @@ class NotesController < ApplicationController
         format.html { render :new}
       end
     end
-
-
-    # redirect_to gig_site_path(current_site.gig, current_site)
   end
+
+  def edit  
+    @site = Site.find(params[:site_id])
+    @note = @site.notes.find(params[:id]) 
+  end
+
+  def update
+    @gig = Site.find(params[:site_id]).gig_id
+    @site = Site.find(params[:site_id])
+    @note = @site.notes.find(params[:id]) 
+    
+    respond_to do |format|
+      if @note.update(note_params)
+        format.html { redirect_to gig_site_path( @gig, @site ), notice: 'Note was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
 
   private
 

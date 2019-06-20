@@ -1,0 +1,29 @@
+<h1 class="text-center">Update Note</h1>
+<br>
+<div class="card w-50 mx-auto">
+  <div class="card-body mx-auto">
+    <%= simple_form_for @note, url: site_note_path(@site, @note) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :body, "Note", class: 'control-label', placeholder: "Some note info here" %>
+      <%= f.text_field :body, class: 'form-control' %>
+      <p class='error'><%= show_errors(@note, :body) %></p>
+
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :image, "Add Image", class: 'control-label' %>
+      <%= f.file_field :image, class: 'form-control-file' %>
+      
+    </div>
+
+    <br />
+    <div>
+      <%= f.submit "Update note", class: 'btn btn-primary' %>
+    </div>
+    
+    <br />
+    <br />
+  <% end %>
+  </div>  
+</div>

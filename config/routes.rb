@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     resources :sites
   end
 
-  resources :sites, only: [:index, :show] do
-    resources :notes, only: [:new, :create, :index]
+  resources :sites do
+    resources :notes
   end
   
     

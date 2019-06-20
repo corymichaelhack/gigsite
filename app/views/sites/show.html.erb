@@ -14,10 +14,13 @@
     <div class="card">
       <div class="card-body">
         <h2 class="text-center"><%= note.body %></h2>
-      </div>   
+      </div>  
+        <div class="text-right">
+          <%= link_to 'Update Note', edit_site_note_path(@site, note), class: 'btn btn-warning btn-lg' %>
+        </div> 
     </div>
   </div>
-  <% end %> 
+  <% end %>   
 </div> 
 
 

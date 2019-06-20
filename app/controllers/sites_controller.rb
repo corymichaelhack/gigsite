@@ -28,7 +28,6 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
-# Update Site info
   def edit  
     @gig = current_user.gigs.find(params[:gig_id])
     @site = @gig.sites.find(params[:id]) 
@@ -46,7 +45,7 @@ class SitesController < ApplicationController
       end
     end
   end
-################################
+
   private 
 
   def site_params
