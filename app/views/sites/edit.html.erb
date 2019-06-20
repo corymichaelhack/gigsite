@@ -1,0 +1,14 @@
+<div class="card">
+   <h1>Update Site</h1>
+  <%= simple_form_for @site, url: gig_site_path(@gig, @site) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :street %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zipcode %>
+    <br />
+    <%= f.submit "Update the site", class: 'btn btn-primary' %>
+    <br />
+    <br />
+  <% end %> 
+</div>

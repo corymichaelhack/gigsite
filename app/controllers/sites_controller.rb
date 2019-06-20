@@ -28,6 +28,25 @@ class SitesController < ApplicationController
     redirect_to root_path
   end
 
+# Update Site info
+  def edit  
+    @gig = current_user.gigs.find(params[:gig_id])
+    @site = @gig.sites.find(params[:id]) 
+  end
+
+  def update
+    @gig = current_user.gigs.find(params[:gig_id])
+    @site = @gig.sites.find(params[:id]) 
+    
+    respond_to do |format|
+      if @site.update(site_params)
+        format.html { redirect_to gig_path(@gig), notice: 'Site was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+################################
   private 
 
   def site_params

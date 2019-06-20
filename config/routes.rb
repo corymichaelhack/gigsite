@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   
   resources :gigs do
-    resources :sites, only: [:index, :show, :new, :create, :destroy]
+    resources :sites
   end
 
   resources :sites, only: [:index, :show] do
