@@ -32157,3 +32157,146 @@ Processing by SitesController#show as HTML
 Completed 200 OK in 62ms (Views: 56.1ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/gigs" for ::1 at 2019-06-20 21:10:44 -0400
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by GigsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering gigs/index.html.erb within layouts/application
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/gigs/index.html.erb:5
+  Rendered gigs/index.html.erb within layouts/application (11.0ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 396ms (Views: 350.7ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/gigs/14" for ::1 at 2019-06-20 21:10:48 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1 AND "gigs"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:9
+  Rendering gigs/show.html.erb within layouts/application
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT "sites".* FROM "sites" WHERE "sites"."gig_id" = $1[0m  [["gig_id", 14]]
+  ↳ app/views/gigs/show.html.erb:15
+  Rendered gigs/show.html.erb within layouts/application (16.9ms)
+  Rendered shared/_application_nav.html.erb (0.9ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 61.4ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/gigs/14/sites/17" for ::1 at 2019-06-20 21:10:49 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"14", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1 AND "gigs"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."gig_id" = $1 AND "sites"."id" = $2 LIMIT $3[0m  [["gig_id", 14], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:21
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 17]]
+  ↳ app/views/sites/show.html.erb:12
+  Rendered sites/show.html.erb within layouts/application (23.7ms)
+  Rendered shared/_application_nav.html.erb (0.8ms)
+  Rendered shared/_application_footer.html.erb (0.3ms)
+Completed 200 OK in 93ms (Views: 79.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/sites/17/notes/56/edit" for ::1 at 2019-06-20 21:11:00 -0400
+Processing by NotesController#edit as HTML
+  Parameters: {"site_id"=>"17", "id"=>"56"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."site_id" = $1 AND "notes"."id" = $2 LIMIT $3[0m  [["site_id", 17], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:35
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/edit.html.erb within layouts/application (45.1ms)
+  Rendered shared/_application_nav.html.erb (0.7ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 109ms (Views: 101.8ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/sites/17/notes/56" for ::1 at 2019-06-20 21:11:03 -0400
+Processing by NotesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+7VddNMpL052QMACdUT+YdAEMuB6Jaaqa7KTDv8u4pFXMaL7Z2mBlHmiS0UdfBCprNomySbVmIjOxRmp4vst0Q==", "note"=>{"body"=>"This is a note"}, "commit"=>"Update note", "site_id"=>"17", "id"=>"56"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:40
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."site_id" = $1 AND "notes"."id" = $2 LIMIT $3[0m  [["site_id", 17], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/notes_controller.rb:44
+Redirected to http://localhost:3000/gigs/14/sites/17
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/gigs/14/sites/17" for ::1 at 2019-06-20 21:11:03 -0400
+Processing by SitesController#show as HTML
+  Parameters: {"gig_id"=>"14", "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT  "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1 AND "gigs"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:20
+  [1m[36mSite Load (0.2ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."gig_id" = $1 AND "sites"."id" = $2 LIMIT $3[0m  [["gig_id", 14], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/sites_controller.rb:21
+  Rendering sites/show.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."site_id" = $1[0m  [["site_id", 17]]
+  ↳ app/views/sites/show.html.erb:12
+  Rendered sites/show.html.erb within layouts/application (1.8ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/sites/17/notes/56/edit" for ::1 at 2019-06-20 21:11:08 -0400
+Processing by NotesController#edit as HTML
+  Parameters: {"site_id"=>"17", "id"=>"56"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.4ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:34
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."site_id" = $1 AND "notes"."id" = $2 LIMIT $3[0m  [["site_id", 17], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:35
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/edit.html.erb within layouts/application (1.4ms)
+  Rendered shared/_application_nav.html.erb (0.6ms)
+  Rendered shared/_application_footer.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 54.0ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/sites/17/notes/56" for ::1 at 2019-06-20 21:11:15 -0400
+Processing by NotesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sEFnHqqOjOkvZfDyINBH2/Qm04N1XFNw2A5n0eXII5AcxZiRHs4iMyCHe7VI6KkTiPjHqimsbVJ9ee12+B3s0A==", "note"=>{"body"=>"This is a note", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fa540b134a0 @tempfile=#<Tempfile:/var/folders/wh/dwnx5bld0wj_3g4bwm5p3fvc0000gp/T/RackMultipart20190620-52885-1lfldal.jpg>, @original_filename="background.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"note[image]\"; filename=\"background.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update note", "site_id"=>"17", "id"=>"56"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/coryhack/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mSite Load (0.3ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:39
+  [1m[36mCACHE Site Load (0.0ms)[0m  [1m[34mSELECT  "sites".* FROM "sites" WHERE "sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:40
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT  "notes".* FROM "notes" WHERE "notes"."site_id" = $1 AND "notes"."id" = $2 LIMIT $3[0m  [["site_id", 17], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/notes_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/notes_controller.rb:44
+  [1m[36mNote Update (2.8ms)[0m  [1m[33mUPDATE "notes" SET "image" = $1, "updated_at" = $2 WHERE "notes"."id" = $3[0m  [["image", "mrttnigyldb2xhjocmuf.jpg"], ["updated_at", "2019-06-21 01:11:15.964057"], ["id", 56]]
+  ↳ app/controllers/notes_controller.rb:44
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/notes_controller.rb:44
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 4.2ms)
+
+
+  
+CloudinaryException (Must supply api_key):
+  
+app/controllers/notes_controller.rb:44:in `block in update'
+app/controllers/notes_controller.rb:43:in `update'
